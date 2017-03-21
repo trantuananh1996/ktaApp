@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  <meta charset="utf-8">
+  <meta name="description" content="Miminium Admin Template v.1">
+  <meta name="author" content="Isna Nur Azis">
+  <meta name="keyword" content="">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Miminium</title>
+ 
+    <!-- start: Css -->
+  <link rel="stylesheet" type="text/css" href="asset/css/bootstrap.min.css">
+
+      <!-- plugins -->
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/font-awesome.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/animate.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/nouislider.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/select2.min.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/ionrangeslider/ion.rangeSlider.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/ionrangeslider/ion.rangeSlider.skinFlat.css"/>
+  <link rel="stylesheet" type="text/css" href="asset/css/plugins/bootstrap-material-datetimepicker.css"/>
+  <link href="asset/css/style.css" rel="stylesheet">
+  <!-- end: Css -->
+
+  <link rel="shortcut icon" href="asset/img/logomi.png">
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+
+ <body id="mimin" class="dashboard">
+      <!-- start: Header -->
+        <nav class="navbar navbar-default header navbar-fixed-top">
+          <div class="col-md-12 nav-wrapper">
+            <div class="navbar-header" style="width:100%;">
+              <div class="opener-left-menu is-open">
+                <span class="top"></span>
+                <span class="middle"></span>
+                <span class="bottom"></span>
+              </div>
+                <a href="#" class="navbar-brand"> 
+                Monitoring
+                </a>
+
+              <ul class="nav navbar-nav navbar-right user-nav">
+                <li class="user-name"><span id="username"></span></li>
+                  <li class="dropdown avatar-dropdown">
+                   <img src="#" class="img-circle avatar" alt="user name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true" id="avatar"/>
+                   <ul class="dropdown-menu user-dropdown">
+                     <li><a href="user-infor.html"><span class="fa fa-user"></span> Thông tin cá nhân</a></li>
+                     <li><a href="mission.html"><span class="fa fa-calendar"></span> Nhiệm vụ</a></li>
+                     <li role="separator" class="divider"></li>
+                     <li class="more">
+                      <ul>
+                        <li class="pull-right"><a href="#" onclick="defaultInformation()">Đăng xuất <span class="fa fa-power-off "></span></a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+                <li ><a href="#" class="opener-right-menu"><span class="fa fa-coffee"></span></a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      <!-- end: Header -->
+    <div class="container-fluid mimin-wrapper">
+        <div id="content">
+          <div class="panel box-shadow-none content-header">
+            <div class="panel-body">
+              <div class="col-md-12">
+                  <h3 class="animated">Thông tin cá nhân</h3>
+              </div>
+            </div>
+          </div>
+          <div class="form-element">
+            <div class="col-md-12 padding-0">
+              <div class="col-md-12 panel panel-blue">
+                    <div class="col-md-12 panel-body" style="padding-bottom:30px;">
+                      <div class="col-md-12">
+                          
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Số điện thoại</label>
+                                <div class="col-sm-6">
+                                    <input type="number" class="form-control border-bottom" id="phoneNumber">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <input type="hidden" name="_token" value="" id="_token">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Email</label>
+                                <div class="col-sm-6">
+                                    <input type="email" class="form-control border-bottom" id="email" readonly="readonly">
+                                </div>
+                            </div>
+                            <hr/>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Họ</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control border-bottom" id="firstName">
+                                </div>
+                                <label for="inputEmail3" class="col-sm-2 control-label">Tên</label>
+                                <div class="col-sm-6">
+                                    <input type="text" class="form-control border-bottom" id="lastName">
+                                </div>
+                            </div>
+                            <div class="col-sm-12 padding-0">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Giới tính</label>
+                                <div class="row">
+                                  <div class="col-md-6">
+                                    <div class="form-animate-radio pull-right">
+                                      <label class="radio">
+                                        <input type="radio" id="gender-female" name='gender'/>
+                                        <span class="outer">
+                                          <span class="inner"></span></span> Nữ
+                                        </label>
+                                    </div>
+                                  </div>
+                                  <div class="col-md-6">
+                                    <div class="form-animate-radio pull-right">
+                                      <label class="radio">
+                                        <input type="radio" id="gender-male" name='gender'/>  
+                                        <span class="outer">
+                                          <span class="inner"></span></span> Nam
+                                        </label>
+                                    </div>
+                                  </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <label for="inputEmail3" class="col-sm-2 control-label">Ngày sinh</label>
+                                <div class="col-sm-6">
+                                    <input type="date" class="form-control border-bottom" id="dob">
+                                </div>
+                            </div>
+                            <div class="form-group">
+                              <label for="inputPassword3" class="col-sm-2 control-label">Địa chỉ</label>
+                              <div class="col-sm-6">
+                                <input type="text" class="form-control border-bottom" id="address">
+                              </div>
+                            </div>
+                            <div class="box-footer">
+                              <button type="submit" class="btn btn-primary pull-left" onclick="post_edit_user()">Cập nhật</button>
+                            </div>
+                          </div>
+                  </div>
+            </div>
+          </div>
+          <div class="panel box-shadow-none content-header">
+            <div class="panel-body">
+              <div class="col-md-12">
+                  <hr/>
+                  <br/>
+                  <h5 class="animated">Giám sát hành trình - Khóa luận tốt nghiệp 2016</h5>
+                  <h5 class="animated" align="center">&copy; <strong>Đinh Công Thế</strong></h5>
+              </div>
+            </div>
+          </div>
+        </div>
+    </div>
+
+
+
+      <!-- start: Mobile -->
+      <div id="mimin-mobile" class="reverse">
+        <div class="mimin-mobile-menu-list">
+            <div class="col-md-12">
+                <ul class="nav nav-list" style="font-size:200% !important;">
+                    <li class="ripple">
+                      <a href="main.html">
+                         <span class="fa fa-map-marker"></span>  Vị trí hiện tại
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="mission.html">
+                         <span class="fa fa-book"></span> Nhiệm vụ
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="journey.html">
+                         <span class="fa fa-map"></span> Hành trình
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="pharmacy.html">
+                         <span class="fa fa-map-signs"></span> Thêm địa điểm
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="#">
+                         <span class="icons icon-settings"></span>  Cài đặt
+                      </a>
+                    </li>
+                    <li class="ripple">
+                      <a href="#" onclick="closeApp()">
+                        <span class="icons icon-logout"></span> Thoát
+                      </a>
+                    </li>
+                  </ul>
+            </div>
+        </div>       
+      </div>
+      <button id="mimin-mobile-menu-opener" class="animated rubberBand btn btn-circle btn-danger">
+        <span class="fa fa-bars"></span>
+      </button>
+       <!-- end: Mobile -->
+
+      
+
+
+
+       <!-- start: Javascript -->
+    <script src="asset/js/jquery.min.js"></script>
+    <script src="asset/js/jquery.ui.min.js"></script>
+    <script src="asset/js/bootstrap.min.js"></script>
+   
+    <script src="asset/js/map.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDKfYGW0M-37um9lJObLVjWJ0ZmElfoO8k&callback=initMap&sensor=true">
+    </script>
+    <script type="text/javascript" src="phonegap.js"></script>
+    <script type="text/javascript" src="cordova.js"></script>
+    <script type="text/javascript" src="index.js"></script>
+    <script src="asset/js/connect_server_by_ajax.js"></script>
+    <script src="asset/js/appClient.js"></script>
+    <script type="text/javascript">
+         $("#avatar").attr('src',localStorage.avatar);
+            document.getElementById('username').innerHTML = localStorage.name;
+            document.getElementById('phoneNumber').value = localStorage.phoneNumber;
+            document.getElementById('email').value = localStorage.email;
+            document.getElementById('firstName').value = localStorage.firstName;
+            document.getElementById('lastName').value = localStorage.lastName;
+            document.getElementById('dob').value = localStorage.dateOfBirth;
+            if(localStorage.gender=='m'||localStorage.gender=='M')
+              document.getElementById('gender-male').checked=true;
+            else
+              document.getElementById('gender-female').checked=true;
+            document.getElementById('address').value = localStorage.address;
+            if(localStorage.username==undefined)
+              window.location = "login.html";
+    </script>
+
+
+    <!-- custom -->
+     <script src="asset/js/main.js"></script>
+     
+
+  <!-- end: Javascript -->
+  </body>
+</html>

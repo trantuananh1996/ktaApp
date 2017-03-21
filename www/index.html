@@ -1,31 +1,57 @@
 <!DOCTYPE html>
+<!--
+    Copyright (c) 2012-2014 Adobe Systems Incorporated. All rights reserved.
+
+    Licensed to the Apache Software Foundation (ASF) under one
+    or more contributor license agreements.  See the NOTICE file
+    distributed with this work for additional information
+    regarding copyright ownership.  The ASF licenses this file
+    to you under the Apache License, Version 2.0 (the
+    "License"); you may not use this file except in compliance
+    with the License.  You may obtain a copy of the License at
+
+    http://www.apache.org/licenses/LICENSE-2.0
+
+    Unless required by applicable law or agreed to in writing,
+    software distributed under the License is distributed on an
+    "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY
+     KIND, either express or implied.  See the License for the
+    specific language governing permissions and limitations
+    under the License.
+-->
 <html>
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="initial-scale=1, maximum-scale=1, user-scalable=no, width=device-width">
-    <meta http-equiv="Content-Security-Policy" content="default-src * filesystem: cdvfile: file: gap: https://ssl.gstatic.com; img-src * filesystem: gap: data: cdvfile: file: https://ssl.gstatic.com android-webview-video-poster:; style-src 'self' 'unsafe-inline' filesystem: cdvfile: file:; script-src 'self' 'unsafe-inline' 'unsafe-eval' http://localhost:* filesystem: cdvfile: file:">
-    <title></title>
-    <link href="build/mm.bundle.css" rel="stylesheet">
-    <script src="lib/ionic/release/js/ionic.bundle.js"></script>
-    <script src="cordova.js"></script>
-    <script src="lib/angular-translate/angular-translate.js"></script>
-    <script src="lib/angular-translate-loader-partial/angular-translate-loader-partial.js"></script>
-    <script src="lib/ngCordova/dist/ng-cordova.js"></script>
-    <script src="lib/ydn.db/jsc/ydn.db-dev.js"></script>
-    <script src="lib/angular-md5/angular-md5.js"></script>
-    <script src="lib/angular-aria/angular-aria.js"></script>
-    <script src="lib/moment/min/moment-with-locales.js"></script>
-    <script src="lib/jszip/dist/jszip.js"></script>
-    <script src="lib/oclazyload/dist/ocLazyLoad.js"></script>
-    <script src="lib/ckeditor/ckeditor.js"></script>
-    <script src="lib/angular-ckeditor/angular-ckeditor.js"></script>
-    <script src="lib/angular-messages/angular-messages.js"></script>
-    <script src="lib/chart.js/dist/Chart.js"></script>
-    <script src="lib/angular-chart.js/dist/angular-chart.min.js"></script>
-    <script src="build/mm.bundle.js"></script>
-    <style></style> <!-- Empty style to make easier to test styles using Inspector. -->
-  </head>
-  <body ng-app="mm">
-    <ion-nav-view></ion-nav-view>
-  </body>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+        <link rel="stylesheet" type="text/css" href="asset/css/index.css" />
+        <title>Giám sát hành trình</title>
+    </head>
+    <body>
+        <div class="app">
+            <h1>Monitoring</h1><br/>
+            <div id="deviceready" class="blink">
+                <input type="hidden" class="form-control" id="_token" placeholder="Token" value="clgt">
+                <p class="event listening">Đang kết nối</p>
+                <p class="event received">Kết nối xong</p>
+            </div>
+        </div>
+        <script type="text/javascript" src="phonegap.js"></script>
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="index.js"></script>
+        <script src="asset/js/connect_server_by_ajax.js"></script>
+        <script src="asset/js/appClient.js"></script>
+        <script type="text/javascript">
+          document.addEventListener('deviceready', onDeviceReady, false);
+          function onDeviceReady(){
+            if(localStorage.username!=undefined){
+              window.location = "process.html";
+            }
+            else
+              window.location = "login.html";
+          }
+        </script>
+    </body>
 </html>
